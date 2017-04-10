@@ -12,5 +12,3 @@ const reducersContainer = combineReducers({
 
 export const store = createStore(reducersContainer, applyMiddleware(thunk, routerMiddleware(browserHistory)));
 export const history = syncHistoryWithStore(browserHistory, store);
-
-export default reducersContainer;

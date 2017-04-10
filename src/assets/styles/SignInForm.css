@@ -1,11 +1,21 @@
-.sign-in-form{
-  background-color: #000;
+.modal-back{
+  background-color: rgba(0, 0, 0, 0.6);
+  height: calc(100% + 60px);
+  width: 100%;
+  position: absolute;
+  top: -60px;
+  z-index: 99;
 }
 .modal{
+  position: fixed;
+  top: 60px;
   display: block;
 }
-body{
-  background: rgba(0,0,0,0.7);
+.modal h2{
+  background-color: #29b6f6;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 .input-field-inline input[type=email]:focus{
   border-bottom: 1px solid #0277bd;
@@ -22,6 +32,9 @@ body{
 .btn:hover{
   background-color: #039be5;
 }
+.btn:focus{
+  background-color: #01579b;
+}
 .go-to-other-form-btn{
   background: none;
   border: none;
@@ -30,8 +43,11 @@ body{
 }
 .go-to-other-form-btn:hover{
   color: #039be5;
-  border-bottom: 1px solid #0277bd;
-  box-shadow: 0 1px 0 0 #0277bd;
+  border-bottom: 1px solid #039be5;
+  box-shadow: 0 1px 0 0 #039be5;
+}
+.regulations-checkbox[type=checkbox].filled-in:checked + label:after{
+  background-color: #039be5;
 }
 @media screen and (max-width: 730px) {
   .modal{

@@ -5,7 +5,8 @@ import { history } from './reducers/Store';
 
 import MainComponent from './components/MainComponent';
 import HomePage from './components/HomePage/HomePage';
-import SignInForm from './components/HomePage/SignInForm';
+import SignInForm from './components/SignForms/SignInForm';
+import SignUpForm from './components/SignForms/SignUpForm';
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
           <Route path='/' component={ MainComponent }>
             <IndexRoute component={ HomePage } />
             <Route path='/signIn' component={ SignInForm } />
+            <Route path='/signUp' component={ SignUpForm } />
           </Route>
         </Router>
       </div>
