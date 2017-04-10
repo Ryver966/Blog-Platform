@@ -1,0 +1,48 @@
+.sign-in-form{
+  background-color: #000;
+}
+.modal{
+  display: block;
+}
+body{
+  background: rgba(0,0,0,0.7);
+}
+.input-field-inline input[type=email]:focus{
+  border-bottom: 1px solid #0277bd;
+  box-shadow: 0 1px 0 0 #0277bd;
+}
+.input-field-inline input[type=password]:focus{
+  border-bottom: 1px solid #0277bd;
+  box-shadow: 0 1px 0 0 #0277bd;
+}
+.btn{
+  background-color: #29b6f6;
+  float: right;
+}
+.btn:hover{
+  background-color: #039be5;
+}
+.go-to-other-form-btn{
+  background: none;
+  border: none;
+  font-size: 16px;
+  float: left;
+}
+.go-to-other-form-btn:hover{
+  color: #039be5;
+  border-bottom: 1px solid #0277bd;
+  box-shadow: 0 1px 0 0 #0277bd;
+}
+@media screen and (max-width: 730px) {
+  .modal{
+    width: 100%;
+  }
+  .btn{
+    float: none;
+    width: auto;
+  }
+  .go-to-other-form-btn{
+    float: none;
+    margin-top: 10px;
+  }
+}
