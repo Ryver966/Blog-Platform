@@ -36,14 +36,12 @@
 }
 .sign-form{
   background-color: #fff;
+  text-align: center;
 }
 .container h4{
   color: #039be5;
 }
-@media screen and (max-width: 730px) {
-  .modal{
-    width: 100%;
-  }
+@media screen and (max-width: 990px) {
   .btn{
     float: none;
     width: auto;

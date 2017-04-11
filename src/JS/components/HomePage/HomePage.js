@@ -12,7 +12,7 @@ class HomePage extends Component {
       <div>
         <div className='row body-header'>
           <SignInForm goTo={ this.props.goTo } />
-            <div className='col s8'>
+            <div className='col l8 s12'>
               <a className='container main-page-paragraph'>
             <h3>First Blogging Platform For True Programmers</h3>
             <h5>The best way to easy blogging!</h5>

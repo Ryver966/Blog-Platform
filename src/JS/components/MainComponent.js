@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { store } from '../reducers/Store';
 import { push } from 'react-router-redux';
 
+import NavBar from './NavBar/NavBar';
+
 export default class MainComponent extends Component {
   constructor(props) {
     super(props);
@@ -21,9 +23,9 @@ export default class MainComponent extends Component {
 
     return(
       <div>
-        <div className='nav-bar'>MENU BAR</div>
+        <NavBar />
         { childrenWithProps }
-        </div>
+      </div>
     )
   }
 }

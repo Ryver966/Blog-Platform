@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import '../../../../node_modules/materialize-css/bin/materialize.css';
-import '../../../assets/styles/SignInForm.css';
+import '../../../assets/styles/SignForms.css';
 
 import { signUp } from '../../actions/Actions';
 
 class SignUpForm extends Component {
   render() {
     return(
-      <div className='container'>
+      <div className='container sign-form'>
         <h4>Only 30 seconds you need to register and create your own blog!</h4><br />
             <form>
               <h3>Register</h3>

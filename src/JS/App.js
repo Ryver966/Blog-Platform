@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../assets/styles/App.css';
 import { Router, Route, IndexRoute } from 'react-router';
 import { history } from './reducers/Store';
 
