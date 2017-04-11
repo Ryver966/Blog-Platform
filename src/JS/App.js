@@ -15,7 +15,6 @@ class App extends Component {
         <Router history = { history }>
           <Route path='/' component={ MainComponent }>
             <IndexRoute component={ HomePage } />
-            <Route path='/signIn' component={ SignInForm } />
             <Route path='/signUp' component={ SignUpForm } />
           </Route>
         </Router>

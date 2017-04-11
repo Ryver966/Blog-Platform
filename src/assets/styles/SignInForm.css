@@ -1,21 +1,6 @@
-.modal-back{
-  background-color: rgba(0, 0, 0, 0.6);
-  height: calc(100% + 60px);
-  width: 100%;
-  position: absolute;
-  top: -60px;
-  z-index: 99;
-}
-.modal{
-  position: fixed;
-  top: 60px;
-  display: block;
-}
-.modal h2{
-  background-color: #29b6f6;
-  width: 100%;
-  padding-top: 5px;
-  padding-bottom: 5px;
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 60px; opacity: 1}
 }
 .input-field-inline input[type=email]:focus{
   border-bottom: 1px solid #0277bd;
@@ -38,7 +23,7 @@
 .go-to-other-form-btn{
   background: none;
   border: none;
-  font-size: 16px;
+  font-size: 14px;
   float: left;
 }
 .go-to-other-form-btn:hover{
@@ -48,6 +33,12 @@
 }
 .regulations-checkbox[type=checkbox].filled-in:checked + label:after{
   background-color: #039be5;
+}
+.sign-form{
+  background-color: #fff;
+}
+.container h4{
+  color: #039be5;
 }
 @media screen and (max-width: 730px) {
   .modal{

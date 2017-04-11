@@ -16,7 +16,7 @@ export default class MainComponent extends Component {
   render() {
 
     const childrenWithProps = React.Children.map(this.props.children, (child) => React.cloneElement(child, {
-      goTo: this.goTo
+      goTo: this.goTo,
     }));
 
     return(
