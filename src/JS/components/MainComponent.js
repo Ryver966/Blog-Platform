@@ -23,7 +23,7 @@ export default class MainComponent extends Component {
 
     return(
       <div>
-        <NavBar />
+        <NavBar goTo={ this.goTo } />
         { childrenWithProps }
       </div>
     )

@@ -20,6 +20,7 @@ class SignUpForm extends Component {
                   <label htmlFor="accept-regulations">Accept all regulations.</label>
                 </p>
                 <input type='button' className='btn' onClick={ () => signUp(document.getElementById('sign-up-email').value, document.getElementById('sign-up-pass').value, document.getElementById('sign-up-conf-pass').value, document.getElementById('accept-regulations')) } value='Sign Up' /><br />
+                <input type='button' className='go-to-other-form-btn' onClick={ () => this.props.goTo('/') } value='Have An Account Already? ' />
               </div>
             </form>
           </div>

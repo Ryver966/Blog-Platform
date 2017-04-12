@@ -1,3 +1,10 @@
+.show{
+  display: block;
+  animation: showMobileMenuSlide 1s;
+}
+.hide{
+  display: none;
+}
 .nav-wrapper{
   padding-right: 30px;
   color: #313131;
@@ -8,8 +15,16 @@
   from{ color: #313131 }
   to{ color: #039be5 }
 }
+@keyframes showMobileMenuSlide{
+  from{ height: 0; }
+  to{ height: 400%; }
+}
+@keyframes hideMobileMenuSlide{
+  from{ height: 400%; }
+  to{ height: 0; }
+}
 .nav-wrapper ul li{
-  margin-left: 20px;
+  padding-left: 20px;
   cursor: pointer;
 }
 .nav-wrapper ul li:hover{
@@ -22,10 +37,27 @@
   width: 160px;
   padding-left: 30px !important;
   margin-left: -10px;
+  cursor: pointer;
 }
 .material-icons{
-  font-size: 6rem;
   color: #039be5;
-  font-size: 60px;
   margin-right: -10px;
+}
+.mobile-nav{
+  display: block;
+  float: none;
+  width: 100%;
+  background-color: #313131;
+  height: auto;
+  color: #fff;
+  position: absolute;
+  right: 0;
+  top: 55px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.mobile-nav li{
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
 }
