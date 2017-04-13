@@ -11,9 +11,9 @@ class SignInForm extends Component {
             <form className='col s12'>
               <h3>Sign In</h3>
               <div className='input-field-inline'>
-                <input type='email' placeholder='E-mail' id='sign-in-email' className='validate' required />
+                <input type='email' placeholder='E-mail' id='sign-in-email' className='validate' />
                 <input type='password' placeholder='Password' id='sign-in-pass' className='validate' required />
-                <input type='submit' className='btn waves-effect waves-light' onClick={ () => this.props.signIn(document.getElementById('sign-in-email').value, document.getElementById('sign-in-pass').value)} value='Sign In' /><br />
+                <input type='submit' className='btn waves-effect waves-light' onClick={ () => this.props.signIn(document.getElementById('sign-in-email'), document.getElementById('sign-in-pass'))} value='Sign In' /><br />
                 <input type='button' className='go-to-other-form-btn' onClick={ ()  => this.props.goTo('/signUp') } value='Sign Up' /><br />
                 <input type='button' className='go-to-other-form-btn' onClick={ () => this.props.goTo('/recoverPassword') } value='Forgor Password?' />
               </div>

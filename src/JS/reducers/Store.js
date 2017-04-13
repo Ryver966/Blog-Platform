@@ -5,11 +5,10 @@ import thunk from 'redux-thunk';
 
 import LoggedUser from './reducer-logged-user';
 
-const persitedState = localStorage.getItem('reduxState') ? JSON.parse(localStorage.getItem('reduxState')) : {};
 const reducersContainer = combineReducers({ 
   routing: routerReducer,
   user: LoggedUser,
 });
 
-export const store = createStore(reducersContainer, persitedState, applyMiddleware(thunk, routerMiddleware(browserHistory)));
+export const store = createStore(reducersContainer, applyMiddleware(thunk, routerMiddleware(browserHistory)));
 export const history = syncHistoryWithStore(browserHistory, store);

@@ -12,14 +12,14 @@ const promiseMockSignInFn = new Promise((reslove, reject) => {
 });
 
 export function signIn(email, password) {
-  if(email.length !== 0 && password.length !== 0) {
+  if(email.value.length !== 0 && password.value.length !== 0) {
     return function(dispatch) {
       promiseMockSignInFn.then((fromReslove) => {
         store.dispatch(sign_in(fromReslove));
-        store.subscribe(() => {
-          localStorage.setItem('reduxState', JSON.stringify(store.getState()))
-        })
+        event.preventDefault()
       })
+      email.value = '';
+      password.value = '';
     }
   } else {
     alert('Check all fields.');

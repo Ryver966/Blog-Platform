@@ -6,10 +6,22 @@ class NavBar extends Component {
   constructor(props){
     super(props);
     this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
+    this.checkUser = this.checkUser.bind(this);
 
     this.state = {
-      isMobileMenuOpened: false
+      isMobileMenuOpened: false,
+      isUserLogged: false
     }
+  }
+
+  componentWillReceiveProps() {
+    this.checkUser();
+  }
+
+  checkUser() {
+    this.setState({
+      isUserLogged: !this.props.user.Email
+    })
   }
 
   toggleMobileMenu() {
@@ -19,12 +31,16 @@ class NavBar extends Component {
   }
 
   render() {
+    console.log(this.state.isUserLogged)
     return(
       <nav>
         <div className='nav-wrapper'>
           <a className='brand-logo left' onClick={ () => this.props.goTo('/') }>LOGO</a>
           <a data-activates='mobile-demo' onClick={ this.toggleMobileMenu } className='button-collapse right'>
-            <i className='large material-icons right'>menu</i>
+            <i className='material-icons right'>menu</i>
+          </a>
+          <a className='right'>
+            <i className={ `material-icons right user-icon ${ this.state.isUserLogged ? 'show' : 'hide' }` }>perm_identity</i>
           </a>
           <ul className={ `mobile-nav ${ this.state.isMobileMenuOpened ? 'show' : 'hide' }`}>
             <li>Create Blog</li>

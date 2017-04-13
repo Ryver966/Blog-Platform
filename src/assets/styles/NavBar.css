@@ -42,6 +42,7 @@
 .material-icons{
   color: #039be5;
   margin-right: -10px;
+  font-size: 35px !important;
 }
 .mobile-nav{
   display: block;
@@ -60,4 +61,14 @@
   width: 100%;
   font-size: 12px;
   text-align: center;
+}
+.user-icon{
+  border-radius: 50%;
+  width: 65px;
+  text-align: center;
+  cursor: pointer;
+}
+.user-icon:hover{
+  background-color: #313131;
+
 }
