@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { store } from '../reducers/Store';
 import { push } from 'react-router-redux';
+import { connect } from 'react-redux';
+import { signIn } from '../actions/Actions';
 
 import NavBar from './NavBar/NavBar';
 
-export default class MainComponent extends Component {
+class MainComponent extends Component {
   constructor(props) {
     super(props);
 
@@ -16,9 +18,10 @@ export default class MainComponent extends Component {
   }
 
   render() {
-
+    console.log(this.props.user)
     const childrenWithProps = React.Children.map(this.props.children, (child) => React.cloneElement(child, {
       goTo: this.goTo,
+      signIn: this.props.signIn
     }));
 
     return(
@@ -29,3 +32,17 @@ export default class MainComponent extends Component {
     )
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    user: state.user
+  }
+}
+
+function matchDispatchToProps(dispatch) {
+  return{
+    signIn: (email, password) => dispatch(signIn(email, password))
+  }
+}
+
+export default connect(mapStateToProps, matchDispatchToProps)(MainComponent);

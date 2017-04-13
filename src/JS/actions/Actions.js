@@ -1,14 +1,23 @@
-function mockSignInFn(email, password) {
-  setTimeout(() => { console.log(`${ email } user is logged in`) }, 500)
-};
+import { sign_in } from './sign_in';
+import { store } from '../reducers/Store'
 
-function mockSignUpFn(email, password) {
-  setTimeout(() => { console.log('User created') }, 500);
-}
+const promiseMockSignInFn = new Promise((reslove, reject) => {
+  const authSuccess = true;
+
+    if(authSuccess) {
+      reslove({ Email: 'asd@zxc' })
+    } else {
+      reject('failed')
+    }
+});
 
 export function signIn(email, password) {
   if(email.length !== 0 && password.length !== 0) {
-    mockSignInFn(email, password);
+    return function(dispatch) {
+      promiseMockSignInFn.then((fromReslove) => {
+        store.dispatch(sign_in(fromReslove))
+      })
+    }
   } else {
     alert('Check all fields.');
   }
@@ -17,7 +26,6 @@ export function signIn(email, password) {
 export function signUp(email, password, confirmPassword, regulationsCheckbox) {
   if(email.length !== 0 && password.length !== 0 && confirmPassword.length !== 0 && regulationsCheckbox.checked) {
     if(password === confirmPassword) {
-      mockSignUpFn(email, password);
       window.location.href = '/';
     } else {
       alert('Passwords must be idendical.')

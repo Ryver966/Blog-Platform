@@ -7,11 +7,10 @@ import SignUpForm from '../SignForms/SignUpForm';
 
 class HomePage extends Component {
   render() {
-    console.log(this.props.goTo)
     return(
       <div>
         <div className='row body-header'>
-          <SignInForm goTo={ this.props.goTo } />
+          <SignInForm signIn={ this.props.signIn } goTo={ this.props.goTo } />
             <div className='col l8 s12'>
               <a className='container main-page-paragraph'>
             <h3>First Blogging Platform For True Programmers</h3>

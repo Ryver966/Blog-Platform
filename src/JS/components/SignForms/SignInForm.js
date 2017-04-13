@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import '../../../../node_modules/materialize-css/bin/materialize.css';
 import '../../../assets/styles/SignForms.css';
 
-import { signIn } from '../../actions/Actions';
 
 class SignInForm extends Component {
   render() {
@@ -14,9 +13,9 @@ class SignInForm extends Component {
               <div className='input-field-inline'>
                 <input type='email' placeholder='E-mail' id='sign-in-email' className='validate' required />
                 <input type='password' placeholder='Password' id='sign-in-pass' className='validate' required />
-                <input type='submit' className='btn waves-effect waves-light' onClick={() => signIn(document.getElementById('sign-in-email').value, document.getElementById('sign-in-pass').value)} value='Sign In' /><br />
-                <input type='button' className='go-to-other-form-btn' onClick={ ()  =>this.props.goTo('/signUp') } value='Sign Up' /><br />
-                <input type='button' className='go-to-other-form-btn' value='Forgor Password?' />
+                <input type='submit' className='btn waves-effect waves-light' onClick={ () => this.props.signIn(document.getElementById('sign-in-email').value, document.getElementById('sign-in-pass').value)} value='Sign In' /><br />
+                <input type='button' className='go-to-other-form-btn' onClick={ ()  => this.props.goTo('/signUp') } value='Sign Up' /><br />
+                <input type='button' className='go-to-other-form-btn' onClick={ () => this.props.goTo('/recoverPassword') } value='Forgor Password?' />
               </div>
             </form>
             </div>
