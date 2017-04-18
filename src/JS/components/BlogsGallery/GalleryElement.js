@@ -6,7 +6,7 @@ class GalleryElement extends Component {
   render() {
     return(
       <div className='col l4 s12 gallery-element'>
-        <img src={ require(`../../../assets/img/${ this.props.element }`) } height='33%' width='100%'/>
+        <img src={ require(`../../../assets/img/${ this.props.element }`) } height='480px' width='100%'/>
       </div>
     )
   }

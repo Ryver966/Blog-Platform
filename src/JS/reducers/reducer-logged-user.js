@@ -1,4 +1,7 @@
-const initialUser = { Email: null }
+const initialUser = { 
+  email: null,
+  avatar: null
+}
 
 export default function(state=initialUser, action) {
   switch(action.type) {

@@ -5,11 +5,15 @@ const promiseMockSignInFn = new Promise((reslove, reject) => {
   const authSuccess = true;
 
     if(authSuccess) {
-      reslove({ Email: 'asd@zxc' })
+      reslove({ email: 'asd@zxc' })
     } else {
       reject('failed')
     }
 });
+
+export function signOut() {
+  console.log('user logged out');
+}
 
 export function signIn(email, password) {
   if(email.value.length !== 0 && password.value.length !== 0) {

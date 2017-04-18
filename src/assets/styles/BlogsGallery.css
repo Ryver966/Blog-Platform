@@ -1,3 +1,6 @@
+.gallery-element{
+  height: 50%;
+}
 .gallery-element img{
   width: 100%;
 }

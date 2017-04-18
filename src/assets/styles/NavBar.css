@@ -1,6 +1,9 @@
-.show{
+.show-animation{
   display: block;
   animation: showMobileMenuSlide 1s;
+}
+.show{
+  display: block;
 }
 .hide{
   display: none;
@@ -70,5 +73,41 @@
 }
 .user-icon:hover{
   background-color: #313131;
-
+}
+.user-popup{
+  width: 300px;
+  list-style: none;
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  z-index: 99;
+  background-color: #fff;
+  border: 2px solid #313131;
+  color: #313131;
+  padding-bottom: 24px;
+}
+.user-popup ul li{
+  margin-left: 10px;
+  cursor: pointer;
+  margin-bottom: -20px;
+}
+.user-popup ul li:hover{
+  animation: changeColor 0.3s;
+  animation-fill-mode: forwards;
+}
+.user-avatar img{
+  margin-top: calc(50% - 20px);
+  margin-right: 20px;
+}
+.user-avatar i{
+  margin-right: 20px;
+  margin-top: calc(50% - 20px);
+  font-size: 80px !important;
+}
+@media screen and (max-width: 992px){
+  .user-popup{
+    width: 100%;
+    position: absolute;
+    right: 0;
+  }
 }
