@@ -18,7 +18,6 @@ class MainComponent extends Component {
   }
 
   render() {
-    console.log(this.props.user.Email)
     const childrenWithProps = React.Children.map(this.props.children, (child) => React.cloneElement(child, {
       goTo: this.goTo,
       signIn: this.props.signIn

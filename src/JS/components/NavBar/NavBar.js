@@ -10,11 +10,11 @@ class NavBar extends Component {
 
     this.state = {
       isMobileMenuOpened: false,
-      isUserLogged: false
+      isUserLogged: true
     }
   }
 
-  componentWillReceiveProps() {
+  componentWillReciveProps() {
     this.checkUser();
   }
 
@@ -31,7 +31,7 @@ class NavBar extends Component {
   }
 
   render() {
-    console.log(this.state.isUserLogged)
+    console.log(this.props.user)
     return(
       <nav>
         <div className='nav-wrapper'>
@@ -44,13 +44,13 @@ class NavBar extends Component {
           </a>
           <ul className={ `mobile-nav ${ this.state.isMobileMenuOpened ? 'show' : 'hide' }`}>
             <li>Create Blog</li>
-            <li>Most Popular Blogs</li>
+            <li>Yours Blogs</li>
             <li>Contact</li>
             <li>Help</li>
           </ul>
           <ul className='right hide-on-med-and-down'>
             <li>Create Blog</li>
-            <li>Most Popular Blogs</li>
+            <li>Yours Blogs</li>
             <li>Contact</li>
             <li>Help</li>
           </ul>

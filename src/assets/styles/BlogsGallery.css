@@ -1,0 +1,16 @@
+.gallery-element img{
+  width: 100%;
+}
+.gallery-header{
+  text-align: left;
+  padding-left: 20px;
+  width: calc(50% - 20px);
+  background-color: #039be5;
+  color: #fff;
+}
+@media screen and (max-width: 992px){
+  .gallery-header{
+    width: 100%;
+    text-align: center;
+  }
+}

@@ -4,6 +4,7 @@ import '../../../../node_modules/materialize-css/bin/materialize.css';
 
 import SignInForm from '../SignForms/SignInForm';
 import SignUpForm from '../SignForms/SignUpForm';
+import BlogsGallery from '../BlogsGallery/BlogsGallery';
 
 class HomePage extends Component {
   render() {
@@ -18,6 +19,7 @@ class HomePage extends Component {
           </a>
             </div>
           </div>
+          <BlogsGallery />
         </div>
     )
   }
