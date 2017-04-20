@@ -10,7 +10,7 @@ const elements = [ '1.jpg', '2.jpg', '3.jpg' ];
 class BlogsGallery extends Component {
   render() {
     return(
-      <div>
+      <div className='gallery-component'>
         <GalleryHeader />
         <div className='row'>
           <GalleryElement element={ elements[0] } />

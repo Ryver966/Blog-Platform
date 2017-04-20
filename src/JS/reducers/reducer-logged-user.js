@@ -1,6 +1,16 @@
 const initialUser = { 
-  email: null,
-  avatar: null
+  email: 'none@none.com',
+  avatar: null,
+  id: 123,
+  firstName: 'Peter',
+  lastName: 'Parker',
+  dateOfBirth: 'none',
+  phone: 'none',
+  discord: 'none',
+  tweeter: 'none',
+  facebook: 'none',
+  linkedIn: 'none',
+  gitHub: 'none'
 }
 
 export default function(state=initialUser, action) {

@@ -37,6 +37,7 @@
 .sign-form{
   background-color: #fff;
   text-align: center;
+  position: relative;
 }
 .container h4{
   color: #039be5;

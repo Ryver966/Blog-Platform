@@ -1,8 +1,8 @@
 .gallery-element{
-  height: 50%;
+  text-align: center;
 }
 .gallery-element img{
-  width: 100%;
+  width: 80%;
 }
 .gallery-header{
   text-align: left;

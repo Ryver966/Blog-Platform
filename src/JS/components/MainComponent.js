@@ -3,6 +3,7 @@ import { store } from '../reducers/Store';
 import { push } from 'react-router-redux';
 import { connect } from 'react-redux';
 import { signIn } from '../actions/Actions';
+import '../../assets/styles/HomePage.css';
 
 import NavBar from './NavBar/NavBar';
 
@@ -24,7 +25,7 @@ class MainComponent extends Component {
     }));
 
     return(
-      <div>
+      <div className='main-component'>
         <NavBar goTo={ this.goTo } user={ this.props.user } />
         { childrenWithProps }
       </div>

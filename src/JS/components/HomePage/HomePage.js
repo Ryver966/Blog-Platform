@@ -11,7 +11,10 @@ class HomePage extends Component {
     return(
       <div>
         <div className='row body-header'>
-          <SignInForm signIn={ this.props.signIn } goTo={ this.props.goTo } />
+          <SignInForm 
+            signIn={ this.props.signIn } 
+            goTo={ this.props.goTo } 
+          />
             <div className='col l8 s12'>
               <a className='container main-page-paragraph'>
             <h3>First Blogging Platform For True Programmers</h3>

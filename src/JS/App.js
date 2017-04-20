@@ -1,22 +1,28 @@
 import React, { Component } from 'react';
 import { Router, Route, IndexRoute } from 'react-router';
 import { history } from './reducers/Store';
+import { connect } from 'react-redux';
 
 import MainComponent from './components/MainComponent';
 import HomePage from './components/HomePage/HomePage';
 import SignInForm from './components/SignForms/SignInForm';
 import SignUpForm from './components/SignForms/SignUpForm';
 import RecoverPassword from './components/SignForms/RecoverPassword';
+import MyProfile from './components/UserPanel/MyProfile';
+import EditProfileForm from './components/UserPanel/EditProfileForm';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div>
         <Router history = { history }>
           <Route path='/' component={ MainComponent }>
             <IndexRoute component={ HomePage } />
             <Route path='/signUp' component={ SignUpForm } />
             <Route path='/recoverPassword' component={ RecoverPassword } />
+            <Route path={ `/${ this.props.user.id }/myProfile` } component={ MyProfile }>
+              <Route path={ `/${ this.props.user.id }/myProfile/editProfile` } component={ EditProfileForm } />
+            </Route>
           </Route>
         </Router>
       </div>
@@ -24,4 +30,10 @@ class App extends Component {
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    user: state.user
+  }
+}
+
+export default connect(mapStateToProps)(App);
