@@ -11,8 +11,13 @@ const promiseMockSignInFn = new Promise((reslove, reject) => {
     }
 });
 
+export function updateProfile() {
+
+}
+
 export function signOut() {
   console.log('user logged out');
+  console.log(store);
 }
 
 export function signIn(email, password) {
@@ -39,5 +44,13 @@ export function signUp(email, password, confirmPassword, regulationsCheckbox) {
     }
   } else {
     alert('Check all fields.')
+  }
+}
+export function changePassword(oldPassword, newPassword, confNewPassword) {
+  if(newPassword === confNewPassword) {
+    console.log('password changed');
+    event.preventDefault();
+  } else {
+    alert('New passwords have to be identical.')
   }
 }

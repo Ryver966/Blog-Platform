@@ -10,6 +10,8 @@ import SignUpForm from './components/SignForms/SignUpForm';
 import RecoverPassword from './components/SignForms/RecoverPassword';
 import MyProfile from './components/UserPanel/MyProfile';
 import EditProfileForm from './components/UserPanel/EditProfileForm';
+import NewBlogForm from './components/UserPanel/NewBlogForm';
+import ChangePasswordForm from'./components/UserPanel/ChangePasswordForm';
 
 class App extends Component {
   render() {
@@ -22,6 +24,8 @@ class App extends Component {
             <Route path='/recoverPassword' component={ RecoverPassword } />
             <Route path={ `/${ this.props.user.id }/myProfile` } component={ MyProfile }>
               <Route path={ `/${ this.props.user.id }/myProfile/editProfile` } component={ EditProfileForm } />
+              <Route path={ `/${ this.props.user.id }/myProfile/createBlog` } component={ NewBlogForm } />
+              <Route path={ `/${ this.props.user.id }/myProfile/changePassword` } component={ ChangePasswordForm } />
             </Route>
           </Route>
         </Router>
