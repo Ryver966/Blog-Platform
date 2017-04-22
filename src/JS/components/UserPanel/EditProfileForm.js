@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../../../assets/styles/UserPanel.css';
 import '../../../../node_modules/materialize-css/bin/materialize.css';
 import { connect } from 'react-redux';
+import { updateProfile } from '../../actions/Actions';
 
 class EditProfileForm extends Component {
 
@@ -9,6 +10,7 @@ class EditProfileForm extends Component {
     super(props);
 
     this.fieldsOnChange = this.fieldsOnChange.bind(this);
+    this.setChangedUser = this.setChangedUser.bind(this);
 
     this.state={
       firstName: this.props.user.firstName,
@@ -21,6 +23,19 @@ class EditProfileForm extends Component {
       linkedIn: this.props.user.linkedIn,
       gitHub: this.props.user.gitHub
     }
+  }
+
+  setChangedUser() {
+    this.props.user.firstName = this.state.firstName;
+    this.props.user.lastName = this.state.lastName;
+    this.props.user.dateOfBirth = this.state.dateOfBirth;
+    this.props.user.phone = this.state.phone;
+    this.props.user.discord = this.state.discord;
+    this.props.user.tweeter = this.state.tweeter;
+    this.props.user.linkedIn = this.state.linkedIn;
+    this.props.user.gitHub = this.state.gitHub;
+
+    updateProfile(this.props.user);
   }
 
   fieldsOnChange() {
@@ -89,7 +104,7 @@ class EditProfileForm extends Component {
                 <input type='text' id='git-hub' onChange={ this.fieldsOnChange } onFocus={ (e) => e.target.value='' } value={ this.state.gitHub } />
               </div>
             </div>
-            <input type='submit' className='btn' value='Save Changes' />
+            <input type='button' className='btn' onClick={ this.setChangedUser } value='Save Changes' />
           </div>
         </div>
       </div>

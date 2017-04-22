@@ -11,8 +11,8 @@ const promiseMockSignInFn = new Promise((reslove, reject) => {
     }
 });
 
-export function updateProfile() {
-
+export function updateProfile(user) {
+  console.log(user)
 }
 
 export function signOut() {
@@ -40,7 +40,7 @@ export function signUp(email, password, confirmPassword, regulationsCheckbox) {
     if(password === confirmPassword) {
       window.location.href = '/';
     } else {
-      alert('Passwords must be idendical.')
+      alert('Passwords have to be idendical.')
     }
   } else {
     alert('Check all fields.')
