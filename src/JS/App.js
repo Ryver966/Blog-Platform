@@ -22,8 +22,8 @@ class App extends Component {
             <IndexRoute component={ HomePage } />
             <Route path='/signUp' component={ SignUpForm } />
             <Route path='/recoverPassword' component={ RecoverPassword } />
-            <Route path={ `/${ this.props.user.id }/myProfile` } component={ MyProfile }>
-              <Route path={ `/${ this.props.user.id }/myProfile/editProfile` } component={ EditProfileForm } />
+            <Route path={ `/${ this.props.user.id }/myProfile/editProfile` } component={ MyProfile }>
+              <IndexRoute component={ EditProfileForm } />
               <Route path={ `/${ this.props.user.id }/myProfile/createBlog` } component={ NewBlogForm } />
               <Route path={ `/${ this.props.user.id }/myProfile/changePassword` } component={ ChangePasswordForm } />
             </Route>

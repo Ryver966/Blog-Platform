@@ -4,14 +4,15 @@
   position: absolute;
 }
 .user-panel-nav{
-  width: 150px;
+  width: 170px;
   float: left;
   height: 100%;
   padding-left: 10px;
   background-color: #414141;
+  color: #fff;
 }
 .my-profile-content{
-  width: calc(100% - 150px);
+  width: calc(100% - 170px);
   float: left;
   height: 100%;
 }
@@ -82,11 +83,43 @@
 .blog-url{
   margin-bottom: 100px;
 }
+.user-panel-nav h5{
+  cursor: pointer;
+  font-size: 20px;
+}
+.user-panel-nav h5:hover{
+  color: #0277bd;
+}
+.user-panel-nav ul {
+  background-color: #616161;
+  width: calc(100% + 10px);
+  margin-left: -10px;
+  padding-left: 30px;
+}
+.user-panel-nav ul li{
+  cursor: pointer;
+}
+.user-panel-nav ul li:hover {
+  color: #039be5
+}
+.user-panel-nav h5 i{
+  margin-right: 5px;
+  font-size: 25px !important;
+}
 @media screen and (max-width: 990px){
   .input-field{
     width: 100%;
   }
   .profile-form h3{
     width: 100%;
+  }
+}
+@media screen and (max-width: 760px){
+  .user-panel-nav {
+    width: 40px;
+  }
+  .user-panel-nav h5{
+    width: 25px;
+    white-space: nowrap;
   }
 }

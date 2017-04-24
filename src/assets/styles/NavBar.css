@@ -13,7 +13,6 @@
   color: #313131;
   background-color: #fff;
   font-size: 16px;
-  position: fixed;
 }
 @keyframes changeColor{
   from{ color: #313131 }
@@ -50,14 +49,11 @@
 }
 .mobile-nav{
   display: block;
-  float: none;
-  width: 100%;
+  width: calc(100% + 30px);
   background-color: #313131;
   height: auto;
   color: #fff;
-  position: absolute;
-  right: 0;
-  top: 65px;
+  position: relative;
   overflow: hidden;
   white-space: nowrap;
   z-index: 99;
@@ -91,6 +87,7 @@
 }
 .user-popup ul li{
   margin-left: 10px;
+  width: 100%;
   cursor: pointer;
   margin-bottom: -20px;
 }
@@ -103,6 +100,7 @@
   margin-right: 20px;
 }
 .user-avatar i{
+  text-align: center;
   margin-right: 20px;
   margin-top: calc(50% - 20px);
   font-size: 80px !important;

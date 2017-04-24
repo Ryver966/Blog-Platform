@@ -9,10 +9,10 @@ const promiseMockSignInFn = new Promise((reslove, reject) => {
     } else {
       reject('failed')
     }
-});
+})
 
-export function updateProfile(user) {
-  console.log(user)
+export function updateProfile(firstName, lastName, dateOfBirth, phone, discord, tweeter, linkedIn, gitHub) {
+  console.log({ firstName: firstName, lastName: lastName, dateOfBirth: dateOfBirth, phone: phone, discord: discord, tweeter: tweeter, linkedIn: linkedIn, gitHub: gitHub })
 }
 
 export function signOut() {

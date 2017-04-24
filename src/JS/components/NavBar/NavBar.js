@@ -53,7 +53,7 @@ class NavBar extends Component {
 
   render() {
     return(
-      <nav>
+      <nav className='nav-bar'>
         <div className='nav-wrapper'>
           <a className='brand-logo left' onClick={ () => this.props.goTo('/') }>LOGO</a>
           <a data-activates='mobile-demo' onClick={ this.toggleMobileMenu } className='button-collapse right'>

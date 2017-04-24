@@ -19,37 +19,17 @@ class EditProfileForm extends Component {
       phone: this.props.user.phone,
       discord: this.props.user.discord,
       tweeter: this.props.user.tweeter,
-      facebook: this.props.user.facebook,
       linkedIn: this.props.user.linkedIn,
       gitHub: this.props.user.gitHub
     }
   }
 
   setChangedUser() {
-    this.props.user.firstName = this.state.firstName;
-    this.props.user.lastName = this.state.lastName;
-    this.props.user.dateOfBirth = this.state.dateOfBirth;
-    this.props.user.phone = this.state.phone;
-    this.props.user.discord = this.state.discord;
-    this.props.user.tweeter = this.state.tweeter;
-    this.props.user.linkedIn = this.state.linkedIn;
-    this.props.user.gitHub = this.state.gitHub;
-
-    updateProfile(this.props.user);
+    updateProfile(this.state.firstName, this.state.lastName, this.state.dateOfBirth, this.state.phone, this.state.discord, this.state.tweeter, this.state.linkedin, this.state.github);
   }
 
-  fieldsOnChange() {
-    this.setState({
-      firstName: document.getElementById('first-name').value,
-      lastName: document.getElementById('last-name').value,
-      dateOfBirth: document.getElementById('date-of-birth').value,
-      phone: document.getElementById('phone').value,
-      discord: document.getElementById('discord').value,
-      tweeter: document.getElementById('tweeter').value,
-      facebook: document.getElementById('facebook').value,
-      linkedIn: document.getElementById('linked-in').value,
-      gitHub: document.getElementById('git-hub').value
-    })
+  fieldsOnChange(fieldName, value) {
+    this.setState({ [fieldName]: value })
   }
 
   render() {
@@ -62,15 +42,15 @@ class EditProfileForm extends Component {
               <h3>Personal Information</h3>
               <div className='input-field'>
                 <p>First Name</p>
-                <input type='text' id='first-name' onChange={ this.fieldsOnChange } onFocus={ (e) => e.target.value='' }  value={ this.state.firstName }  />
+                <input type='text' id='first-name' onChange={ (e) => this.fieldsOnChange('firstName', e.target.value) } onFocus={ (e) => e.target.value='' }  value={ this.state.firstName }  />
               </div>
               <div className='input-field'>
                 <p>Last Name</p>
-                <input type='text' id='last-name' onChange={ this.fieldsOnChange } onFocus={ (e) => e.target.value='' } value={ this.state.lastName } />
+                <input type='text' id='last-name' onChange={ (e) => this.fieldsOnChange('lastName', e.target.value) } onFocus={ (e) => e.target.value='' } value={ this.state.lastName } />
               </div>
               <div className='input-field'>
                 <p>Date Of Birth</p>
-                <input type='text' id='date-of-birth' onChange={ this.fieldsOnChange } onFocus={ (e) => e.target.type='date' } value={ this.state.dateOfBirth }/>
+                <input type='text' id='date-of-birth' onChange={ (e) => this.fieldsOnChange('dateOfBirth', e.target.value) } onFocus={ (e) => e.target.type='date' } value={ this.state.dateOfBirth }/>
               </div>
             </div>
             <div className='contact-section'>
@@ -81,27 +61,23 @@ class EditProfileForm extends Component {
               </div>
               <div className='input-field'>
                 <p>Phone Number</p>
-                <input type='text' id='phone' onChange={ this.fieldsOnChange } onFocus={ (e) => e.target.value='' } value={ this.state.phone } />
+                <input type='text' id='phone' onChange={ (e) => this.fieldsOnChange('phone', e.target.value) } onFocus={ (e) => e.target.value='' } value={ this.state.phone } />
               </div>
               <div className='input-field'>
                 <p>Discord Nickname</p>
-                <input type='text' id='discord' onChange={ this.fieldsOnChange } onFocus={ (e) => e.target.value='' } value={ this.state.discord } />
+                <input type='text' id='discord' onChange={ (e) => this.fieldsOnChange('discord', e.target.value) } onFocus={ (e) => e.target.value='' } value={ this.state.discord } />
               </div>
               <div className='input-field'>
                 <p>Tweeter Profile</p>
-                <input type='text' id='tweeter' onChange={ this.fieldsOnChange } onFocus={ (e) => e.target.value='' } value={ this.state.tweeter} />
-              </div>
-              <div className='input-field'>
-                <p>Facebook Profile</p>
-                <input type='text' id='facebook' onChange={ this.fieldsOnChange } onFocus={ (e) => e.target.value='' } value={ this.state.facebook } />
+                <input type='text' id='tweeter' onChange={ (e) => this.fieldsOnChange('tweeter', e.target.value) } onFocus={ (e) => e.target.value='' } value={ this.state.tweeter} />
               </div>
               <div className='input-field'>
                 <p>LinkedIn Profile</p>
-                <input type='text' id='linked-in' onChange={ this.fieldsOnChange } onFocus={ (e) => e.target.value='' } value={ this.state.linkedIn } />
+                <input type='text' id='linked-in' onChange={ (e) => this.fieldsOnChange('linkedIn', e.target.value) } onFocus={ (e) => e.target.value='' } value={ this.state.linkedIn } />
               </div>
               <div className='input-field'>
                 <p>GitHub Profile</p>
-                <input type='text' id='git-hub' onChange={ this.fieldsOnChange } onFocus={ (e) => e.target.value='' } value={ this.state.gitHub } />
+                <input type='text' id='git-hub' onChange={(e) => this.fieldsOnChange('gitHub', e.target.value) } onFocus={ (e) => e.target.value='' } value={ this.state.gitHub } />
               </div>
             </div>
             <input type='button' className='btn' onClick={ this.setChangedUser } value='Save Changes' />
