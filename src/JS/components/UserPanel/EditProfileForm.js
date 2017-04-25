@@ -10,7 +10,6 @@ class EditProfileForm extends Component {
     super(props);
 
     this.fieldsOnChange = this.fieldsOnChange.bind(this);
-    this.setChangedUser = this.setChangedUser.bind(this);
 
     this.state={
       firstName: this.props.user.firstName,
@@ -22,10 +21,6 @@ class EditProfileForm extends Component {
       linkedIn: this.props.user.linkedIn,
       gitHub: this.props.user.gitHub
     }
-  }
-
-  setChangedUser() {
-    updateProfile(this.state.firstName, this.state.lastName, this.state.dateOfBirth, this.state.phone, this.state.discord, this.state.tweeter, this.state.linkedin, this.state.github);
   }
 
   fieldsOnChange(fieldName, value) {
@@ -80,7 +75,7 @@ class EditProfileForm extends Component {
                 <input type='text' id='git-hub' onChange={(e) => this.fieldsOnChange('gitHub', e.target.value) } onFocus={ (e) => e.target.value='' } value={ this.state.gitHub } />
               </div>
             </div>
-            <input type='button' className='btn' onClick={ this.setChangedUser } value='Save Changes' />
+            <input type='button' className='btn' onClick={ () => updateProfile(this.state.firstName, this.state.lastName, this.state.dateOfBirth, this.state.phone, this.state.discord, this.state.tweeter, this.state.linkedin, this.state.github) } value='Save Changes' />
           </div>
         </div>
       </div>

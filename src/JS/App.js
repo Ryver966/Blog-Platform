@@ -12,6 +12,7 @@ import MyProfile from './components/UserPanel/MyProfile';
 import EditProfileForm from './components/UserPanel/EditProfileForm';
 import NewBlogForm from './components/UserPanel/NewBlogForm';
 import ChangePasswordForm from'./components/UserPanel/ChangePasswordForm';
+import AddPost from './components/UserPanel/AddPost';
 
 class App extends Component {
   render() {
@@ -26,6 +27,7 @@ class App extends Component {
               <IndexRoute component={ EditProfileForm } />
               <Route path={ `/${ this.props.user.id }/myProfile/createBlog` } component={ NewBlogForm } />
               <Route path={ `/${ this.props.user.id }/myProfile/changePassword` } component={ ChangePasswordForm } />
+              <Route path={ `/${ this.props.user.id }/myProfile/addPost` } component={ AddPost } />
             </Route>
           </Route>
         </Router>

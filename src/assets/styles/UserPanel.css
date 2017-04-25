@@ -106,10 +106,49 @@
   margin-right: 5px;
   font-size: 25px !important;
 }
+.inputfile{
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+.inputfile + label{
+  font-size: 20px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.inputfile:focus + label,
+.inputfile + label:hover{
+  color: #039be5;
+}
+.input-field label i{
+  position: relative;
+  top: 10px;
+  margin-right: 10px;
+  font-size: 25px !important;
+}
+.input-field textarea{
+  height: 450px;
+  resize: none;
+  padding-left: 5px;
+}
+.input-field textarea:focus{
+  border: 2px solid #039be5;
+}
+.profile-form select{
+  width: 35%;
+}
+.add-post{
+  margin-bottom: 20px;
+}
 @media screen and (max-width: 990px){
   .input-field{
     width: 100%;
   }
+  .profile-form select{
+  width: 100%;
+}
   .profile-form h3{
     width: 100%;
   }
@@ -121,5 +160,18 @@
   .user-panel-nav h5{
     width: 25px;
     white-space: nowrap;
+  }
+  .my-profile-content{
+    width: calc(100% - 40px);
+    z-index: 99;
+  }
+  .user-panel-nav ul{
+    z-index: 999;
+    margin-top: -35px;
+    position: absolute;
+    margin-left: 30px;
+    width: auto;
+    padding-right: 5px;
+    box-shadow: 1px 2px 2px 2px #515151;
   }
 }

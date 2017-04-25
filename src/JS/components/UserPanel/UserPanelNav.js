@@ -9,11 +9,23 @@ class UserPanelNav extends Component {
     super(props);
 
     this.toggleList = this.toggleList.bind(this);
+    this.closeList = this.closeList.bind(this);
 
     this.state = {
       id: 1,
       myAccountVisible: false,
-      blogsVisible: false
+      blogsVisible: false,
+      postsVisible: false
+    }
+  }
+
+  closeList() {
+    if(window.innerWidth < 760) {
+      this.setState({
+        myAccountVisible: false,
+        blogsVisible: false,
+        postsVisible: false
+      })
     }
   }
 
@@ -22,12 +34,12 @@ class UserPanelNav extends Component {
       id: id,
       myAccountVisible: false,
       blogsVisible: false,
+      postsVisible: false,
       [listName]: true
     });
   }
 
   render() {
-
     const tree = [
       {
         title: 'My Account',
@@ -54,11 +66,32 @@ class UserPanelNav extends Component {
             path: `/${ this.props.user.id }/myProfile/createBlog`
           }
         ]
+      },
+      {
+        title: 'Posts',
+        childNodes: [
+          {
+            title: 'Add New Post',
+            path: `/${ this.props.user.id }/myProfile/addPost`
+          },
+          {
+            title: 'All Posts',
+            path: '/'
+          }
+        ]
       }
     ]
 
       const childNodes = tree[this.state.id].childNodes.map((node, index) => 
-        <li key={ index } onClick={ () => this.props.goTo(node.path) }>{ node.title }</li>
+        <li 
+          key={ index } 
+          onClick={ () => { 
+            this.props.goTo(node.path); 
+            this.closeList();
+          } }
+        >
+          { node.title }
+        </li>
       );
 
     return(
@@ -69,6 +102,8 @@ class UserPanelNav extends Component {
         <h5 onClick={ () => this.toggleList('blogsVisible', 1) }><i className='material-icons'>dashboard</i>{ tree[1].title }</h5>
         <ul className={ this.state.blogsVisible ? 'show' : 'hide' } >{ childNodes }</ul>
 
+        <h5 onClick={ () => this.toggleList('postsVisible', 2) }><i className='material-icons'>mode_edit</i>{ tree[2].title }</h5>
+        <ul className={ this.state.postsVisible ? 'show' : 'hide' } >{ childNodes }</ul>
       </div>
     )
   }

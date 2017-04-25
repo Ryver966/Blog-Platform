@@ -10,7 +10,23 @@ const initialUser = {
   tweeter: 'none',
   facebook: 'none',
   linkedIn: 'none',
-  gitHub: 'none'
+  gitHub: 'none',
+  blogs:[
+    {
+      id: 1,
+      title: 'Java Script Learning',
+      posts: {
+
+      }
+    },
+    {
+      id: 2,
+      title: 'Redux Tutorials',
+      posts: {
+
+      }
+    }
+  ]
 }
 
 export default function(state=initialUser, action) {

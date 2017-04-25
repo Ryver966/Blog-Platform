@@ -11,6 +11,14 @@ const promiseMockSignInFn = new Promise((reslove, reject) => {
     }
 })
 
+export function addPost (blog, title, image, text, tags) {
+  if(blog =='Select Blog' || !title || !text || !tags) {
+    alert('Check all fields.')
+  } else {
+    console.log({ blog: blog, title: title, image: image, text: text, tags: tags })
+  }
+}
+
 export function updateProfile(firstName, lastName, dateOfBirth, phone, discord, tweeter, linkedIn, gitHub) {
   console.log({ firstName: firstName, lastName: lastName, dateOfBirth: dateOfBirth, phone: phone, discord: discord, tweeter: tweeter, linkedIn: linkedIn, gitHub: gitHub })
 }

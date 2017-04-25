@@ -79,6 +79,7 @@ class NavBar extends Component {
           hasUserAvatar={ this.state.hasUserAvatar }
           user={ this.props.user }
           isUserPopupOpened={ this.state.isUserPopupOpened }
+          goTo={ this.props.goTo }
         />
       </nav>
     )
