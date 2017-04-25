@@ -39,7 +39,7 @@ class AddPost extends Component {
         </div>
         <div className='input-field'>
           <p>Add Picture</p><br />
-          <input type='file' onChange={ (e) => this.fieldsOnChange('image', e.target.value) } id='file' className='inputfile'/>
+          <input type='file' onChange={ (e) => this.fieldsOnChange('image', e.target.value) } accept='image/*' id='file' className='inputfile'/>
           <label htmlFor='file'><i className='material-icons'>perm_media</i>Choose a picture...</label>
         </div>
         <div className='input-field'>
@@ -50,7 +50,7 @@ class AddPost extends Component {
           <p>Tags (add the comma after each one)</p>
           <input type='text' onChange={ (e) => this.fieldsOnChange('tags', e.target.value) } />
         </div>
-        <input type='submit' onClick={ () => addPost(this.state.selectedBlog, this.state.postTitle, this.state.image, this.state.postText, this.state.tags) } className='btn add-post' value='Add Post' />
+        <input type='submit' onClick={ () => addPost(this.state.selectedBlog, this.state.postTitle, this.state.image, this.state.postText, this.state.tags, this.props.user.id) } className='btn add-post' value='Add Post' />
       </div>
     )
   }

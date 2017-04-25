@@ -11,11 +11,11 @@ const promiseMockSignInFn = new Promise((reslove, reject) => {
     }
 })
 
-export function addPost (blog, title, image, text, tags) {
+export function addPost (blog, title, image, text, tags, author_id) {
   if(blog =='Select Blog' || !title || !text || !tags) {
     alert('Check all fields.')
   } else {
-    console.log({ blog: blog, title: title, image: image, text: text, tags: tags })
+    console.log({ blog: blog, title: title, image: image, text: text, tags: tags, author_id: author_id })
   }
 }
 
