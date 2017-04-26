@@ -9,7 +9,7 @@ class UserOptionsPopup extends Component {
       <div className={ `user-popup row ${ this.props.isUserPopupOpened ? 'show' : 'hide' }` }>
         <ul className='col s6'>
           <li onClick={ () => this.props.goTo(`/${ this.props.user.id }/myProfile/editProfile`) }>My Profile</li>
-          <li>Create New Blog</li>
+          <li onClick={ () => this.props.goTo(`/${ this.props.user.id }/myProfile/createBlog`) }>Create New Blog</li>
           <li onClick={ signOut }>Sign Out</li>
         </ul>
         <div className='user-avatar right'>

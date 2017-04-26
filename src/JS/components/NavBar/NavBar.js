@@ -64,14 +64,14 @@ class NavBar extends Component {
           </a>
           <ul className={ `mobile-nav ${ this.state.isMobileMenuOpened ? 'show-animation' : 'hide' }`}>
             <li>Create Blog</li>
-            <li>Yours Blogs</li>
-            <li>Contact</li>
+            <li onClick={ () => this.props.goTo('/blogsCatalog') }>Yours Blogs</li>
+            <li onClick={ () => this.props.goTo('/contact') }>Contact</li>
             <li>Help</li>
           </ul>
           <ul className='right hide-on-med-and-down'>
             <li>Create Blog</li>
-            <li>Yours Blogs</li>
-            <li>Contact</li>
+            <li onClick={ () => this.props.goTo('/blogsCatalog') }>Yours Blogs</li>
+            <li onClick={ () => this.props.goTo('/contact') }>Contact</li>
             <li>Help</li>
           </ul>
         </div>

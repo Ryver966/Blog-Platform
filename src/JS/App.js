@@ -13,7 +13,8 @@ import EditProfileForm from './components/UserPanel/EditProfileForm';
 import NewBlogForm from './components/UserPanel/NewBlogForm';
 import ChangePasswordForm from'./components/UserPanel/ChangePasswordForm';
 import AddPost from './components/UserPanel/AddPost';
-import ContactForm from './components/ContactForm/ContactForm'
+import ContactForm from './components/ContactForm/ContactForm';
+import BlogsCatalog from './components/BlogsCatalog/BlogsCatalog';
 
 class App extends Component {
   render() {
@@ -31,6 +32,7 @@ class App extends Component {
               <Route path={ `/${ this.props.user.id }/myProfile/addPost` } component={ AddPost } />
             </Route>
             <Route path='/contact' component={ ContactForm } />
+            <Route path='/blogsCatalog' component={ BlogsCatalog} />
           </Route>
         </Router>
       </div>
