@@ -11,6 +11,16 @@ const promiseMockSignInFn = new Promise((reslove, reject) => {
     }
 })
 
+export function sendContactForm(email, topic, blogName, message) {
+    if(!email || !topic || !blogName || blogName === 'Select Blog' || !message) {
+      alert('Check all fields');
+    } else {
+      setTimeout(() => {
+        return console.log({ email: email, topic: topic, blogName: blogName, message: message })
+      }, 1000)
+    }
+}
+
 export function addPost (blog, title, image, text, tags, author_id) {
   if(blog =='Select Blog' || !title || !text || !tags) {
     alert('Check all fields.')

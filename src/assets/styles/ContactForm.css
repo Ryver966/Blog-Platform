@@ -1,0 +1,48 @@
+.container{
+  text-align: center;
+}
+.container h2{
+  color: #039be5;
+}
+.show{
+  display: block;
+}
+.hide{
+  display: none;
+}
+.input-field select{
+  display: block;
+  margin-top: 20px;
+}
+.field{
+  position: relative;
+  left: 25%;
+  width: 50%;
+  margin-bottom: -10px;
+}
+.field textarea{
+  margin-top: 20px;
+}
+.input-field input[type='email']:focus{
+  border-bottom: 1px solid #0277bd;
+  box-shadow: 0 1px 0 0 #0277bd;
+}
+.contact-form form input[type='button']{
+  position: relative !important;
+  left: 45%;
+  width: 10%;
+  top: 10px;
+  margin-bottom: 10px;
+}
+@media screen and (max-width: 760px){
+  .field{
+    left: 0;
+    width: 100%;
+  }
+  .contact-form form input[type='button']{
+  position: relative !important;
+  left: 25%;
+  width: 50%;
+  top: 10px;
+  }
+}
